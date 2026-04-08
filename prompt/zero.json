@@ -1,0 +1,11 @@
+{
+    "zero": {
+        "definition": "Temporal Logical Rules:\nTemporal Logical Rules \"{head}(X0,Xl,Tl)<-R1(X0,X1,T0)&...&Rl(X(l-1),Xl,T(l-1))\" are rules used in temporal knowledge graph reasoning to predict relations between entities over time. They describe how the relation \"{head}\" between entities \"X0\" and \"Xl\" evolves from past time steps \"Ti (i={{0,...,(l-1)}})\"(rule body) to the next \"Tl\" (rule head), strictly following the constraint \"T0 <= \u00b7\u00b7\u00b7 <= T(l-1) < Tl\".",
+        "role": "You are an expert in temporal knowledge graph reasoning. Please generate as many temporal logic rules as possible related to \"{head}(X0,Xl,Tl)\".",
+        "examples_title": "Here are a few examples:",
+        "examples": "Rule head: inv_Provide_humanitarian_aid(X0,Xl,Tl)\ninv_Provide_humanitarian_aid(X0,X1,T1)<-inv_Engage_in_diplomatic_cooperation(X0,X1,T0)\ninv_Provide_humanitarian_aid(X0,X3,T3)<-inv_Criticize_or_denounce(X0,X1,T0)&inv_Demand(X1,X2,T1)&Make_a_visit(X2,X3,T2)\ninv_Provide_humanitarian_aid(X0,X2,T2)<-Make_a_visit(X0,X1,T0)&Make_a_visit(X1,X2,T1)\nRule head: Appeal_for_change_in_institutions,_regime(X0,Xl,Tl)\nAppeal_for_change_in_institutions,_regime(X0,X1,T1)<-inv_Engage_in_symbolic_act(X0,X1,T0)\nAppeal_for_change_in_institutions,_regime(X0,X2,T2)<-inv_Criticize_or_denounce(X0,X1,T0)&Make_pessimistic_comment(X1,X2,T1)\nRule head: Appeal_for_economic_aid(X0,Xl,Tl)\nAppeal_for_economic_aid(X0,X1,T1)<-inv_Reduce_or_stop_military_assistance(X0,X1,T0)\nAppeal_for_economic_aid(X0,X2,T2)<-inv_Make_an_appeal_or_request(X0,X1,T0)&Make_statement(X1,X2,T1)\nAppeal_for_economic_aid(X0,X3,T3)<-inv_Demand(X0,X1,T0)&inv_Accede_to_demands_for_change_in_leadership(X1,X2,T1)&Accuse(X2,X3,T2)",
+        "goal": "Let's think step-by-step, please generate as many as possible most relevant temporal rules that are relative to \"{head}(X0,Xl,Tl)\".",
+        "candidate": "For the relations in rule body, you are going to choose from the following candidates: {candidate_rels}.",
+        "return_rules": "Return the rules only without any explanations."
+    }
+}
